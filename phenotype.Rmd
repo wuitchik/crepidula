@@ -1,0 +1,369 @@
+---
+title: "phenotype_data"
+author: "Daniel Wuitchik"
+date: "Last compiled on `r format(Sys.time(), '%d %B %Y')`"
+output: html_document
+---
+Map
+
+```{r}
+library(tidyverse)
+library(lubridate)
+library(tibbletime)
+NM_2010 = read.delim("Temp_plots/psbm1h2010.txt", na.strings='999', sep = "", header = 1)
+NM_2011 = read.delim("Temp_plots/psbm1h2011.txt", na.strings='999', sep = "", header = 1)
+NM_2012 = read.delim("Temp_plots/psbm1h2012.txt", na.strings='999', sep = "", header = 1)
+NM_2013 = read.delim("Temp_plots/psbm1h2013.txt", na.strings='999', sep = "", header = 1)
+NM_2014 = read.delim("Temp_plots/psbm1h2014.txt", na.strings='999', sep = "", header = 1)
+NM_2015 = read.delim("Temp_plots/psbm1h2015.txt", na.strings='999', sep = "", header = 1)
+NM_2016 = read.delim("Temp_plots/psbm1h2016.txt", na.strings='999', sep = "", header = 1)
+NM_2017 = read.delim("Temp_plots/psbm1h2017.txt", na.strings='999', sep = "", header = 1)
+NM_2018 = read.delim("Temp_plots/psbm1h2018.txt", na.strings='999', sep = "", header = 1)
+NM_2019 = read.delim("Temp_plots/psbm1h2019.txt", na.strings='999', sep = "", header = 1)
+NM_2020 = read.delim("Temp_plots/psbm1h2020.txt", na.strings='999', sep = "", header = 1)
+
+NM_temp = 
+  bind_rows(NM_2015) %>%
+  bind_rows(NM_2016) %>%
+  bind_rows(NM_2017) %>%
+  bind_rows(NM_2018) %>%
+  bind_rows(NM_2019) %>%
+  bind_rows(NM_2020) %>%
+  dplyr::slice(-1) %>%
+  mutate(Date = paste(paste(X.YY, MM,DD, sep="-")," ",paste(hh,mm, sep=":"),sep=""))%>%
+  mutate(Date = strptime(Date, format = "%Y-%m-%d %H:%M")) %>%
+  select(Date, WTMP) %>%
+  mutate(WTMP = as.numeric(WTMP)) %>%
+  as_tbl_time(Date) %>%
+  mutate(Date = as.POSIXct(Date)) %>%
+  collapse_by("hourly") %>%
+  group_by(Date) %>%
+  dplyr::summarise(mean_var = mean(WTMP)) %>%
+  dplyr::rename(Temperature = mean_var) %>%
+  filter(Temperature < 50)
+
+
+NM_temp_plot = 
+ggplot(NM_temp, aes(x = Date, y = Temperature, color = Temperature)) +
+    geom_line(size = 1.1) +
+    scale_color_gradient2(low = "dodgerblue1", mid = "lightyellow2", high = "orangered1", midpoint = 15) +
+ylim(-5,35) +
+  labs(x = "Year", y = "Temperature (°C)", color = "Temperature (°C)") +
+  theme_classic() +
+  theme(legend.position = "none")
+
+ggsave("NM_temp.pdf", plot = NM_temp_plot, width = 4, height = 4, units = "in")
+NM_temp_plot
+
+```
+
+```{r}
+PM_2015 = read.delim("Temp_plots/portland/casm1h2015.txt", na.strings='999', sep = "", header = 1)
+PM_2016 = read.delim("Temp_plots/portland/casm1h2016.txt", na.strings='999', sep = "", header = 1)
+PM_2017 = read.delim("Temp_plots/portland/casm1h2017.txt", na.strings='999', sep = "", header = 1)
+PM_2018 = read.delim("Temp_plots/portland/casm1h2018.txt", na.strings='999', sep = "", header = 1)
+PM_2019 = read.delim("Temp_plots/portland/casm1h2019.txt", na.strings='999', sep = "", header = 1)
+PM_2020 = read.delim("Temp_plots/portland/casm1h2020.txt", na.strings='999', sep = "", header = 1)
+
+PM_temp = 
+  bind_rows(PM_2015) %>%
+  bind_rows(PM_2016) %>%
+  bind_rows(PM_2017) %>%
+  bind_rows(PM_2018) %>%
+  bind_rows(PM_2019) %>%
+  bind_rows(PM_2020) %>%
+  dplyr::slice(-1) %>%
+  mutate(Date = paste(paste(X.YY, MM,DD, sep="-")," ",paste(hh,mm, sep=":"),sep=""))%>%
+  mutate(Date = strptime(Date, format = "%Y-%m-%d %H:%M")) %>%
+  select(Date, WTMP) %>%
+  mutate(WTMP = as.numeric(WTMP)) %>%
+  as_tbl_time(Date) %>%
+  mutate(Date = as.POSIXct(Date)) %>%
+  collapse_by("hourly") %>%
+  group_by(Date) %>%
+  dplyr::summarise(mean_var = mean(WTMP)) %>%
+  dplyr::rename(Temperature = mean_var) %>%
+  filter(Temperature < 50)
+
+
+PM_temp_plot = 
+ggplot(PM_temp, aes(x = Date, y = Temperature, color = Temperature)) +
+    geom_line(size = 1.1) +
+    scale_color_gradient2(low = "dodgerblue1", mid = "lightyellow2", high = "orangered1", midpoint = 15) +
+ylim(-5,35) +
+  labs(x = "Year", y = "Temperature (°C)", color = "Temperature (°C)") +
+  theme_classic() +
+  theme(legend.position = "none")
+
+ggsave("PM_temp.pdf", plot = NM_temp_plot, width = 4, height = 4, units = "in")
+PM_temp_plot
+```
+
+```{r}
+BM_2015 = read.delim("Temp_plots/boston/bhbm3h2015.txt", na.strings='999', sep = "", header = 1)
+BM_2016 = read.delim("Temp_plots/boston/bhbm3h2016.txt", na.strings='999', sep = "", header = 1)
+BM_2017 = read.delim("Temp_plots/boston/bhbm3h2017.txt", na.strings='999', sep = "", header = 1)
+BM_2018 = read.delim("Temp_plots/boston/44013h2018.txt", na.strings='999', sep = "", header = 1)
+BM_2019 = read.delim("Temp_plots/boston/44013h2019.txt", na.strings='999', sep = "", header = 1)
+BM_2020 = read.delim("Temp_plots/boston/bhbm3h2020.txt", na.strings='999', sep = "", header = 1)
+
+BM_temp = 
+  bind_rows(BM_2015) %>%
+  bind_rows(BM_2016) %>%
+  bind_rows(BM_2017) %>%
+  bind_rows(BM_2018) %>%
+  bind_rows(BM_2019) %>%
+  bind_rows(BM_2020) %>%
+  dplyr::slice(-1) %>%
+  mutate(Date = paste(paste(X.YY, MM,DD, sep="-")," ",paste(hh,mm, sep=":"),sep=""))%>%
+  mutate(Date = strptime(Date, format = "%Y-%m-%d %H:%M")) %>%
+  select(Date, WTMP) %>%
+  mutate(WTMP = as.numeric(WTMP)) %>%
+  as_tbl_time(Date) %>%
+  mutate(Date = as.POSIXct(Date)) %>%
+  collapse_by("hourly") %>%
+  group_by(Date) %>%
+  dplyr::summarise(mean_var = mean(WTMP)) %>%
+  dplyr::rename(Temperature = mean_var) %>%
+  filter(Temperature < 50)
+
+
+BM_temp_plot = 
+ggplot(BM_temp, aes(x = Date, y = Temperature, color = Temperature)) +
+    geom_line(size = 1.1) +
+    scale_color_gradient2(low = "dodgerblue1", mid = "lightyellow2", high = "orangered1", midpoint = 15) +
+ylim(-5,25) +
+  labs(x = "Year", y = "Temperature (°C)", color = "Temperature (°C)") +
+  theme_classic() +
+  theme(legend.position = "none")
+
+ggsave("BM_temp.pdf", plot = BM_temp_plot, width = 4, height = 4, units = "in")
+BM_temp_plot
+
+```
+
+```{r}
+NR_2015 = read.delim("Temp_plots/newport/nwpr1h2015.txt", na.strings='999', sep = "", header = 1)
+NR_2016 = read.delim("Temp_plots/newport/nwpr1h2016.txt", na.strings='999', sep = "", header = 1)
+NR_2017 = read.delim("Temp_plots/newport/nwpr1h2017.txt", na.strings='999', sep = "", header = 1)
+NR_2018 = read.delim("Temp_plots/newport/nwpr1h2018.txt", na.strings='999', sep = "", header = 1)
+NR_2019 = read.delim("Temp_plots/newport/nwpr1h2019.txt", na.strings='999', sep = "", header = 1)
+NR_2020 = read.delim("Temp_plots/newport/nwpr1h2020.txt", na.strings='999', sep = "", header = 1)
+
+NR_temp = 
+  bind_rows(NR_2015) %>%
+  bind_rows(NR_2016) %>%
+  bind_rows(NR_2017) %>%
+  bind_rows(NR_2018) %>%
+  bind_rows(NR_2019) %>%
+  bind_rows(NR_2020) %>%
+  dplyr::slice(-1) %>%
+  mutate(Date = paste(paste(X.YY, MM,DD, sep="-")," ",paste(hh,mm, sep=":"),sep=""))%>%
+  mutate(Date = strptime(Date, format = "%Y-%m-%d %H:%M")) %>%
+  select(Date, WTMP) %>%
+  mutate(WTMP = as.numeric(WTMP)) %>%
+  as_tbl_time(Date) %>%
+  mutate(Date = as.POSIXct(Date)) %>%
+  collapse_by("hourly") %>%
+  group_by(Date) %>%
+  dplyr::summarise(mean_var = mean(WTMP)) %>%
+  dplyr::rename(Temperature = mean_var) %>%
+  filter(Temperature < 50)
+
+
+NR_temp_plot = 
+ggplot(NR_temp, aes(x = Date, y = Temperature, color = Temperature)) +
+    geom_line(size = 1.1) +
+    scale_color_gradient2(low = "dodgerblue1", mid = "lightyellow2", high = "orangered1", midpoint = 15) +
+ylim(-5,35) +
+  labs(x = "Year", y = "Temperature (°C)", color = "Temperature (°C)") +
+  theme_classic() +
+  theme(legend.position = "none")
+
+ggsave("NR_temp.pdf", plot = NR_temp_plot, width = 4, height = 4, units = "in")
+NR_temp_plot
+```
+
+```{r}
+
+
+ggplot() +
+  geom_line(data = PM_temp, aes(x = Date, y = Temperature, color = Temperature), color = "#1cb3e6") +
+  geom_line(data = NR_temp, aes(x = Date, y = Temperature, color = Temperature), color = "#e6741c") +
+    geom_line(data = BM_temp, aes(x = Date, y = Temperature, color = Temperature), color = "#e6441c") +
+    geom_line(data = NM_temp, aes(x = Date, y = Temperature, color = Temperature), color = "#1c7ae6") +
+  labs(x = "Year", y = "Temperature (°C)", color = "Temperature (°C)") +
+  theme_classic()
+```
+Air temps 
+
+```{r}
+air_NM_2010 = read.delim("Temp_plots/psbm1h2010.txt", na.strings='999', sep = "", header = 1)
+air_NM_2011 = read.delim("Temp_plots/psbm1h2011.txt", na.strings='999', sep = "", header = 1)
+air_NM_2012 = read.delim("Temp_plots/psbm1h2012.txt", na.strings='999', sep = "", header = 1)
+air_NM_2013 = read.delim("Temp_plots/psbm1h2013.txt", na.strings='999', sep = "", header = 1)
+air_NM_2014 = read.delim("Temp_plots/psbm1h2014.txt", na.strings='999', sep = "", header = 1)
+air_NM_2015 = read.delim("Temp_plots/psbm1h2015.txt", na.strings='999', sep = "", header = 1)
+air_NM_2016 = read.delim("Temp_plots/psbm1h2016.txt", na.strings='999', sep = "", header = 1)
+air_NM_2017 = read.delim("Temp_plots/psbm1h2017.txt", na.strings='999', sep = "", header = 1)
+air_NM_2018 = read.delim("Temp_plots/psbm1h2018.txt", na.strings='999', sep = "", header = 1)
+air_NM_2019 = read.delim("Temp_plots/psbm1h2019.txt", na.strings='999', sep = "", header = 1)
+air_NM_2020 = read.delim("Temp_plots/psbm1h2020.txt", na.strings='999', sep = "", header = 1)
+
+air_NM_temp = 
+  bind_rows(air_NM_2015) %>%
+  bind_rows(air_NM_2016) %>%
+  bind_rows(air_NM_2017) %>%
+  bind_rows(air_NM_2018) %>%
+  bind_rows(air_NM_2019) %>%
+  bind_rows(air_NM_2020) %>%
+  dplyr::slice(-1) %>%
+  mutate(Date = paste(paste(X.YY, MM,DD, sep="-")," ",paste(hh,mm, sep=":"),sep=""))%>%
+  mutate(Date = strptime(Date, format = "%Y-%m-%d %H:%M")) %>%
+  select(Date, ATMP) %>%
+  mutate(ATMP = as.numeric(ATMP)) %>%
+  as_tbl_time(Date) %>%
+  mutate(Date = as.POSIXct(Date)) %>%
+  collapse_by("hourly") %>%
+  group_by(Date) %>%
+  dplyr::summarise(mean_var = mean(ATMP)) %>%
+  dplyr::rename(Temperature = mean_var) %>%
+  filter(Temperature < 50)
+
+
+air_NM_temp_plot = 
+ggplot(air_NM_temp, aes(x = Date, y = Temperature, color = Temperature)) +
+    geom_line(size = 1.1) +
+    scale_color_gradient2(low = "dodgerblue1", mid = "lightyellow2", high = "orangered1", midpoint = 15) +
+  labs(x = "Year", y = "Temperature (°C)", color = "Temperature (°C)") +
+  theme_classic() +
+  theme(legend.position = "none") +
+  geom_line(data = NM_temp, aes(x = Date, y = Temperature, color = Temperature), color = "#1c7ae6") 
+  
+
+ggsave("air_NM_temp.pdf", plot = air_NM_temp_plot, width = 4, height = 4, units = "in")
+air_NM_temp_plot
+
+```
+
+```{r}
+air_PM_2015 = read.delim("Temp_plots/portland/casm1h2015.txt", na.strings='999', sep = "", header = 1)
+air_PM_2016 = read.delim("Temp_plots/portland/casm1h2016.txt", na.strings='999', sep = "", header = 1)
+air_PM_2017 = read.delim("Temp_plots/portland/casm1h2017.txt", na.strings='999', sep = "", header = 1)
+air_PM_2018 = read.delim("Temp_plots/portland/casm1h2018.txt", na.strings='999', sep = "", header = 1)
+air_PM_2019 = read.delim("Temp_plots/portland/casm1h2019.txt", na.strings='999', sep = "", header = 1)
+air_PM_2020 = read.delim("Temp_plots/portland/casm1h2020.txt", na.strings='999', sep = "", header = 1)
+
+air_PM_temp = 
+  bind_rows(air_PM_2015) %>%
+  bind_rows(air_PM_2016) %>%
+  bind_rows(air_PM_2017) %>%
+  bind_rows(air_PM_2018) %>%
+  bind_rows(air_PM_2019) %>%
+  bind_rows(air_PM_2020) %>%
+  dplyr::slice(-1) %>%
+  mutate(Date = paste(paste(X.YY, MM,DD, sep="-")," ",paste(hh,mm, sep=":"),sep=""))%>%
+  mutate(Date = strptime(Date, format = "%Y-%m-%d %H:%M")) %>%
+  select(Date, ATMP) %>%
+  mutate(ATMP = as.numeric(ATMP)) %>%
+  as_tbl_time(Date) %>%
+  mutate(Date = as.POSIXct(Date)) %>%
+  collapse_by("hourly") %>%
+  group_by(Date) %>%
+  dplyr::summarise(mean_var = mean(ATMP)) %>%
+  dplyr::rename(Temperature = mean_var) %>%
+  filter(Temperature < 50)
+
+
+air_PM_temp_plot = 
+ggplot(air_PM_temp, aes(x = Date, y = Temperature, color = Temperature)) +
+    geom_line(size = 1.1) +
+    scale_color_gradient2(low = "dodgerblue1", mid = "lightyellow2", high = "orangered1", midpoint = 15) +
+  labs(x = "Year", y = "Temperature (°C)", color = "Temperature (°C)") +
+  theme_classic() +
+  theme(legend.position = "none") +
+  geom_line(data = PM_temp, aes(x = Date, y = Temperature, color = Temperature), color = "#1cb3e6") 
+
+ggsave("air_PM_temp.pdf", plot = air_PM_temp_plot, width = 4, height = 4, units = "in")
+air_PM_temp_plot
+```
+
+```{r}
+
+air_BM_temp = 
+  bind_rows(BM_2015) %>%
+  bind_rows(BM_2016) %>%
+  bind_rows(BM_2017) %>%
+  bind_rows(BM_2018) %>%
+  bind_rows(BM_2019) %>%
+  bind_rows(BM_2020) %>%
+  dplyr::slice(-1) %>%
+  mutate(Date = paste(paste(X.YY, MM,DD, sep="-")," ",paste(hh,mm, sep=":"),sep=""))%>%
+  mutate(Date = strptime(Date, format = "%Y-%m-%d %H:%M")) %>%
+  select(Date, ATMP) %>%
+  mutate(ATMP = as.numeric(ATMP)) %>%
+  as_tbl_time(Date) %>%
+  mutate(Date = as.POSIXct(Date)) %>%
+  collapse_by("hourly") %>%
+  group_by(Date) %>%
+  dplyr::summarise(mean_var = mean(ATMP)) %>%
+  dplyr::rename(Temperature = mean_var) %>%
+  filter(Temperature < 50)
+
+
+air_BM_temp_plot = 
+ggplot(air_BM_temp, aes(x = Date, y = Temperature, color = Temperature)) +
+    geom_line(size = 1.1) +
+    scale_color_gradient2(low = "dodgerblue1", mid = "lightyellow2", high = "orangered1", midpoint = 15) +
+  labs(x = "Year", y = "Temperature (°C)", color = "Temperature (°C)") +
+  theme_classic() +
+  theme(legend.position = "none") + 
+  geom_line(data = BM_temp, aes(x = Date, y = Temperature, color = Temperature), color = "#e6441c") +
+
+ggsave("air_BM_temp.pdf", plot = BM_temp_plot, width = 4, height = 4, units = "in")
+air_BM_temp_plot
+
+```
+
+```{r}
+air_NR_temp = 
+  bind_rows(NR_2015) %>%
+  bind_rows(NR_2016) %>%
+  bind_rows(NR_2017) %>%
+  bind_rows(NR_2018) %>%
+  bind_rows(NR_2019) %>%
+  bind_rows(NR_2020) %>%
+  dplyr::slice(-1) %>%
+  mutate(Date = paste(paste(X.YY, MM,DD, sep="-")," ",paste(hh,mm, sep=":"),sep=""))%>%
+  mutate(Date = strptime(Date, format = "%Y-%m-%d %H:%M")) %>%
+  select(Date, ATMP) %>%
+  mutate(ATMP = as.numeric(ATMP)) %>%
+  as_tbl_time(Date) %>%
+  mutate(Date = as.POSIXct(Date)) %>%
+  collapse_by("hourly") %>%
+  group_by(Date) %>%
+  dplyr::summarise(mean_var = mean(ATMP)) %>%
+  dplyr::rename(Temperature = mean_var) %>%
+  filter(Temperature < 50)
+
+
+air_NR_temp_plot = 
+ggplot(air_NR_temp, aes(x = Date, y = Temperature, color = Temperature)) +
+    geom_line(size = 1.1) +
+    scale_color_gradient2(low = "dodgerblue1", mid = "lightyellow2", high = "orangered1", midpoint = 15) +
+  labs(x = "Year", y = "Temperature (°C)", color = "Temperature (°C)") +
+  theme_classic() +
+  theme(legend.position = "none") +
+  geom_line(data = NR_temp, aes(x = Date, y = Temperature, color = Temperature), color = "#e6741c") 
+
+ggsave("air_NR_temp.pdf", plot = air_NR_temp_plot, width = 4, height = 4, units = "in")
+air_NR_temp_plot
+```
+
+```{r}
+library(ggpubr)
+
+full = ggarrange(air_NM_temp_plot, air_PM_temp_plot, air_BM_temp_plot, air_NR_temp_plot)
+full
+```
+
