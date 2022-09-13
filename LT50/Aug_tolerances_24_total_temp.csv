@@ -1,0 +1,225 @@
+﻿Population,Species,Treatment,Replicate,Hour,Mortalities
+Kettle Cove,Crepidula fornicata,H1,1,4,0
+Kettle Cove,Crepidula fornicata,H1,2,4,0
+Kettle Cove,Crepidula fornicata,H1,3,4,0
+Kettle Cove,Crepidula fornicata,H1,4,4,0
+Kettle Cove,Crepidula fornicata,H2,1,4,1
+Kettle Cove,Crepidula fornicata,H2,2,4,0
+Kettle Cove,Crepidula fornicata,H2,3,4,0
+Kettle Cove,Crepidula fornicata,H2,4,4,1
+Kettle Cove,Crepidula fornicata,H3,1,4,0
+Kettle Cove,Crepidula fornicata,H3,2,4,0
+Kettle Cove,Crepidula fornicata,H3,3,4,0
+Kettle Cove,Crepidula fornicata,H3,4,4,1
+Kettle Cove,Crepidula fornicata,H4,1,4,1
+Kettle Cove,Crepidula fornicata,H4,2,4,4
+Kettle Cove,Crepidula fornicata,H4,3,4,4
+Kettle Cove,Crepidula fornicata,H4,4,4,3
+Robbinston,Crepidula fornicata,H1,1,4,0
+Robbinston,Crepidula fornicata,H1,2,4,0
+Robbinston,Crepidula fornicata,H1,3,4,0
+Robbinston,Crepidula fornicata,H1,4,4,0
+Robbinston,Crepidula fornicata,H2,1,4,0
+Robbinston,Crepidula fornicata,H2,2,4,0
+Robbinston,Crepidula fornicata,H2,3,4,0
+Robbinston,Crepidula fornicata,H2,4,4,0
+Robbinston,Crepidula fornicata,H3,1,4,1
+Robbinston,Crepidula fornicata,H3,2,4,0
+Robbinston,Crepidula fornicata,H3,3,4,1
+Robbinston,Crepidula fornicata,H3,4,4,0
+Robbinston,Crepidula fornicata,H4,1,4,1
+Robbinston,Crepidula fornicata,H4,2,4,0
+Robbinston,Crepidula fornicata,H4,3,4,0
+Robbinston,Crepidula fornicata,H4,4,4,1
+Newport,Crepidula fornicata,H1,1,4,0
+Newport,Crepidula fornicata,H1,2,4,0
+Newport,Crepidula fornicata,H1,3,4,0
+Newport,Crepidula fornicata,H1,4,4,0
+Newport,Crepidula fornicata,H2,1,4,0
+Newport,Crepidula fornicata,H2,2,4,0
+Newport,Crepidula fornicata,H2,3,4,0
+Newport,Crepidula fornicata,H2,4,4,0
+Newport,Crepidula fornicata,H3,1,4,0
+Newport,Crepidula fornicata,H3,2,4,0
+Newport,Crepidula fornicata,H3,3,4,0
+Newport,Crepidula fornicata,H3,4,4,0
+Newport,Crepidula fornicata,H4,1,4,0
+Newport,Crepidula fornicata,H4,2,4,0
+Newport,Crepidula fornicata,H4,3,4,0
+Newport,Crepidula fornicata,H4,4,4,0
+Kettle Cove,Crepidula fornicata,H1,1,24,3
+Kettle Cove,Crepidula fornicata,H1,2,24,1
+Kettle Cove,Crepidula fornicata,H1,3,24,1
+Kettle Cove,Crepidula fornicata,H1,4,24,2
+Kettle Cove,Crepidula fornicata,H2,1,24,2
+Kettle Cove,Crepidula fornicata,H2,2,24,2
+Kettle Cove,Crepidula fornicata,H2,3,24,1
+Kettle Cove,Crepidula fornicata,H2,4,24,3
+Kettle Cove,Crepidula fornicata,H3,1,24,4
+Kettle Cove,Crepidula fornicata,H3,2,24,2
+Kettle Cove,Crepidula fornicata,H3,3,24,4
+Kettle Cove,Crepidula fornicata,H3,4,24,3
+Kettle Cove,Crepidula fornicata,H4,1,24,4
+Kettle Cove,Crepidula fornicata,H4,2,24,6
+Kettle Cove,Crepidula fornicata,H4,3,24,7
+Kettle Cove,Crepidula fornicata,H4,4,24,7
+Robbinston,Crepidula fornicata,H1,1,24,0
+Robbinston,Crepidula fornicata,H1,2,24,0
+Robbinston,Crepidula fornicata,H1,3,24,1
+Robbinston,Crepidula fornicata,H1,4,24,0
+Robbinston,Crepidula fornicata,H2,1,24,0
+Robbinston,Crepidula fornicata,H2,2,24,0
+Robbinston,Crepidula fornicata,H2,3,24,3
+Robbinston,Crepidula fornicata,H2,4,24,2
+Robbinston,Crepidula fornicata,H3,1,24,4
+Robbinston,Crepidula fornicata,H3,2,24,1
+Robbinston,Crepidula fornicata,H3,3,24,2
+Robbinston,Crepidula fornicata,H3,4,24,2
+Robbinston,Crepidula fornicata,H4,1,24,3
+Robbinston,Crepidula fornicata,H4,2,24,2
+Robbinston,Crepidula fornicata,H4,3,24,4
+Robbinston,Crepidula fornicata,H4,4,24,3
+Newport,Crepidula fornicata,H1,1,24,1
+Newport,Crepidula fornicata,H1,2,24,1
+Newport,Crepidula fornicata,H1,3,24,1
+Newport,Crepidula fornicata,H1,4,24,0
+Newport,Crepidula fornicata,H2,1,24,1
+Newport,Crepidula fornicata,H2,2,24,1
+Newport,Crepidula fornicata,H2,3,24,2
+Newport,Crepidula fornicata,H2,4,24,1
+Newport,Crepidula fornicata,H3,1,24,0
+Newport,Crepidula fornicata,H3,2,24,1
+Newport,Crepidula fornicata,H3,3,24,3
+Newport,Crepidula fornicata,H3,4,24,0
+Newport,Crepidula fornicata,H4,1,24,7
+Newport,Crepidula fornicata,H4,2,24,8
+Newport,Crepidula fornicata,H4,3,24,4
+Newport,Crepidula fornicata,H4,4,24,8
+Beverly,Crepidula fornicata,H1,1,4,0
+Beverly,Crepidula fornicata,H1,2,4,0
+Beverly,Crepidula fornicata,H1,3,4,0
+Beverly,Crepidula fornicata,H1,4,4,0
+Beverly,Crepidula fornicata,H2,1,4,0
+Beverly,Crepidula fornicata,H2,2,4,0
+Beverly,Crepidula fornicata,H2,3,4,0
+Beverly,Crepidula fornicata,H2,4,4,0
+Beverly,Crepidula fornicata,H3,1,4,0
+Beverly,Crepidula fornicata,H3,2,4,1
+Beverly,Crepidula fornicata,H3,3,4,0
+Beverly,Crepidula fornicata,H3,4,4,0
+Beverly,Crepidula fornicata,H4,1,4,2
+Beverly,Crepidula fornicata,H4,2,4,3
+Beverly,Crepidula fornicata,H4,3,4,0
+Beverly,Crepidula fornicata,H4,4,4,1
+Beverly,Crepidula plana,H1,1,4,1
+Beverly,Crepidula plana,H1,2,4,1
+Beverly,Crepidula plana,H1,3,4,0
+Beverly,Crepidula plana,H1,4,4,0
+Beverly,Crepidula plana,H2,1,4,0
+Beverly,Crepidula plana,H2,2,4,0
+Beverly,Crepidula plana,H2,3,4,1
+Beverly,Crepidula plana,H2,4,4,2
+Beverly,Crepidula plana,H3,1,4,0
+Beverly,Crepidula plana,H3,2,4,0
+Beverly,Crepidula plana,H3,3,4,2
+Beverly,Crepidula plana,H3,4,4,1
+Beverly,Crepidula plana,H4,1,4,0
+Beverly,Crepidula plana,H4,2,4,3
+Beverly,Crepidula plana,H4,3,4,1
+Beverly,Crepidula plana,H4,4,4,1
+Cape May,Crepidula fornicata,H1,1,4,0
+Cape May,Crepidula fornicata,H1,2,4,0
+Cape May,Crepidula fornicata,H1,3,4,0
+Cape May,Crepidula fornicata,H1,4,4,0
+Cape May,Crepidula fornicata,H2,1,4,0
+Cape May,Crepidula fornicata,H2,2,4,0
+Cape May,Crepidula fornicata,H2,3,4,0
+Cape May,Crepidula fornicata,H2,4,4,0
+Cape May,Crepidula fornicata,H3,1,4,0
+Cape May,Crepidula fornicata,H3,2,4,0
+Cape May,Crepidula fornicata,H3,3,4,0
+Cape May,Crepidula fornicata,H3,4,4,0
+Cape May,Crepidula fornicata,H4,1,4,0
+Cape May,Crepidula fornicata,H4,2,4,0
+Cape May,Crepidula fornicata,H4,3,4,0
+Cape May,Crepidula fornicata,H4,4,4,0
+Cape May,Crepidula plana,H1,1,4,0
+Cape May,Crepidula plana,H1,2,4,0
+Cape May,Crepidula plana,H1,3,4,0
+Cape May,Crepidula plana,H1,4,4,0
+Cape May,Crepidula plana,H2,1,4,1
+Cape May,Crepidula plana,H2,2,4,0
+Cape May,Crepidula plana,H2,3,4,0
+Cape May,Crepidula plana,H2,4,4,0
+Cape May,Crepidula plana,H3,1,4,2
+Cape May,Crepidula plana,H3,2,4,0
+Cape May,Crepidula plana,H3,3,4,1
+Cape May,Crepidula plana,H3,4,4,0
+Cape May,Crepidula plana,H4,1,4,1
+Cape May,Crepidula plana,H4,2,4,0
+Cape May,Crepidula plana,H4,3,4,3
+Cape May,Crepidula plana,H4,4,4,1
+Beverly,Crepidula fornicata,H1,1,24,1
+Beverly,Crepidula fornicata,H1,2,24,3
+Beverly,Crepidula fornicata,H1,3,24,1
+Beverly,Crepidula fornicata,H1,4,24,4
+Beverly,Crepidula fornicata,H2,1,24,3
+Beverly,Crepidula fornicata,H2,2,24,7
+Beverly,Crepidula fornicata,H2,3,24,6
+Beverly,Crepidula fornicata,H2,4,24,3
+Beverly,Crepidula fornicata,H3,1,24,4
+Beverly,Crepidula fornicata,H3,2,24,5
+Beverly,Crepidula fornicata,H3,3,24,4
+Beverly,Crepidula fornicata,H3,4,24,5
+Beverly,Crepidula fornicata,H4,1,24,5
+Beverly,Crepidula fornicata,H4,2,24,6
+Beverly,Crepidula fornicata,H4,3,24,8
+Beverly,Crepidula fornicata,H4,4,24,5
+Beverly,Crepidula plana,H1,1,24,4
+Beverly,Crepidula plana,H1,2,24,2
+Beverly,Crepidula plana,H1,3,24,4
+Beverly,Crepidula plana,H1,4,24,4
+Beverly,Crepidula plana,H2,1,24,3
+Beverly,Crepidula plana,H2,2,24,4
+Beverly,Crepidula plana,H2,3,24,3
+Beverly,Crepidula plana,H2,4,24,3
+Beverly,Crepidula plana,H3,1,24,4
+Beverly,Crepidula plana,H3,2,24,4
+Beverly,Crepidula plana,H3,3,24,3
+Beverly,Crepidula plana,H3,4,24,3
+Beverly,Crepidula plana,H4,1,24,4
+Beverly,Crepidula plana,H4,2,24,3
+Beverly,Crepidula plana,H4,3,24,3
+Beverly,Crepidula plana,H4,4,24,4
+Cape May,Crepidula fornicata,H1,1,24,1
+Cape May,Crepidula fornicata,H1,2,24,2
+Cape May,Crepidula fornicata,H1,3,24,1
+Cape May,Crepidula fornicata,H1,4,24,1
+Cape May,Crepidula fornicata,H2,1,24,3
+Cape May,Crepidula fornicata,H2,2,24,4
+Cape May,Crepidula fornicata,H2,3,24,2
+Cape May,Crepidula fornicata,H2,4,24,2
+Cape May,Crepidula fornicata,H3,1,24,3
+Cape May,Crepidula fornicata,H3,2,24,4
+Cape May,Crepidula fornicata,H3,3,24,3
+Cape May,Crepidula fornicata,H3,4,24,3
+Cape May,Crepidula fornicata,H4,1,24,7
+Cape May,Crepidula fornicata,H4,2,24,5
+Cape May,Crepidula fornicata,H4,3,24,5
+Cape May,Crepidula fornicata,H4,4,24,4
+Cape May,Crepidula plana,H1,1,24,1
+Cape May,Crepidula plana,H1,2,24,1
+Cape May,Crepidula plana,H1,3,24,0
+Cape May,Crepidula plana,H1,4,24,0
+Cape May,Crepidula plana,H2,1,24,3
+Cape May,Crepidula plana,H2,2,24,7
+Cape May,Crepidula plana,H2,3,24,1
+Cape May,Crepidula plana,H2,4,24,3
+Cape May,Crepidula plana,H3,1,24,4
+Cape May,Crepidula plana,H3,2,24,5
+Cape May,Crepidula plana,H3,3,24,3
+Cape May,Crepidula plana,H3,4,24,3
+Cape May,Crepidula plana,H4,1,24,5
+Cape May,Crepidula plana,H4,2,24,4
+Cape May,Crepidula plana,H4,3,24,3
+Cape May,Crepidula plana,H4,4,24,4
