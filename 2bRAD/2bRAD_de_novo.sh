@@ -12,7 +12,6 @@ cp *.gz /projectnb/coral/crepidula
 # using Misha's pipeline, so we clone their scripts into our server
 git clone https://github.com/z0on/2bRAD_denovo.git
 
-
 # designating all .pl and .py files (perl and python scripts) as executable
 chmod +x *.pl 
 chmod +x *.py
@@ -27,7 +26,6 @@ done
 scc6_qsub_launcher.py -N unzip -P coral -M wuitchik@bu.edu -j y -h_rt 24:00:00 -jobsfile gunzip
 qsub unzip_array.qsub
 
-ls
 
 #==================
 # Step 1: Splitting by in-read barcode, deduplicating and quality-filtering the reads
@@ -79,6 +77,17 @@ awk '{print ">"$1"\n"$2}' all.tab > all.fasta
 module load blast
 module load cdhit/4.6.8
 
+#!/bin/bash -l
+
+#$ -V # inherit the submission environment
+#$ -cwd #start job in submission directory
+#$ -N cd_hit  # job name, anything you want
+#$ -P davieslab
+#$ -l h_rt=12:00:00 #maximum run time
+#$ -M wuitchik@bu.edu #your email
+#$ -m be 
+
+
 cd-hit-est -i all.fasta -o cdh_alltags.fas -aL 1 -aS 1 -g 1 -c 0.91 -M 0 -T 0  
 
 # -aL alignment coverage for the longer sequence,
@@ -118,8 +127,6 @@ export GENOME_DICT=cdh_alltags_cc.dict
 bowtie2-build $GENOME_FASTA $GENOME_FASTA
 samtools faidx $GENOME_FASTA
 
-
-
 #==============
 # Mapping reads to reference (reads-derived fake one, or real) and formatting bam files 
 
@@ -152,3 +159,26 @@ done
 
 scc6_qsub_launcher.py -N sam2bam -P coral -M wuitchik@bu.edu -j y -h_rt 24:00:00 -jobsfile s2b
 qsub sam2bam_array.qsub
+
+# since I've already checked if technical replicates cluster in dendrograms, we are concatenating these files 
+
+mv FC12B.trim.bt2.bam FC12B_2.trim.bt2.bam > FC12.trim.bt2.bam
+mv FN44B.trim.bt2.bam FN44B_2.trim.bt2.bam > FN44.trim.bt2.bam
+mv FR23C.trim.bt2.bam FR23C_2.trim.bt2.bam > FR23.trim.bt2.bam
+mv PB22A.trim.bt2.bam PB22A_2.trim.bt2.bam > PB22.trim.bt2.bam
+mv PK6.trim.bt2.bam PK6_2.trim.bt2.bam > PK6A.trim.bt2.
+mv PN6.trim.bt2.bam PN6_2.trim.bt2.bam > PN6A.trim.bt2.bam
+
+rm -rf FC12B.trim.bt2.bam
+rm -rf FC12B_2.trim.bt2.bam
+rm -rf FN44B.trim.bt2.bam
+rm -rf FN44B_2.trim.bt2.bam
+rm -rf FR23C.trim.bt2.bam
+rm -rf FR23C_2.trim.bt2.bam
+rm -rf PB22A.trim.bt2.bam
+rm -rf PB22A_2.trim.bt2.bam
+rm -rf PK6.trim.bt2.bam
+rm -rf PK6_2.trim.bt2.bam
+rm -rf PN6.trim.bt2.bam
+rm -rf PN6_2.trim.bt2.bam
+
