@@ -7,6 +7,8 @@
 #$ -M wuitchik@bu.edu #your email
 #$ -m e
 
+ls *.bam > both_species_bams
+
 FILTERS="-uniqueOnly 1 -remove_bads 1 -minMapQ 20 -minQ 30 -dosnpstat 1 -doHWE 1 -sb_pval 1e-5 -hetbias_pval 1e-5 -skipTriallelic 1 -minInd 130 -snp_pval 1e-5 -minMaf 0.05 -setMinDepthInd 1"
 TODO="-doMajorMinor 1 -doMaf 1 -doCounts 1 -makeMatrix 1 -doIBS 1 -doCov 1 -doGeno 8 -doBcf 1 -doPost 1 -doGlf 2"
 

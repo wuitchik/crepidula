@@ -161,24 +161,33 @@ scc6_qsub_launcher.py -N sam2bam -P coral -M wuitchik@bu.edu -j y -h_rt 24:00:00
 qsub sam2bam_array.qsub
 
 # since I've already checked if technical replicates cluster in dendrograms, we are concatenating these files 
+module load samtools
 
-mv FC12B.trim.bt2.bam FC12B_2.trim.bt2.bam > FC12.trim.bt2.bam
-mv FN44B.trim.bt2.bam FN44B_2.trim.bt2.bam > FN44.trim.bt2.bam
-mv FR23C.trim.bt2.bam FR23C_2.trim.bt2.bam > FR23.trim.bt2.bam
-mv PB22A.trim.bt2.bam PB22A_2.trim.bt2.bam > PB22.trim.bt2.bam
-mv PK6.trim.bt2.bam PK6_2.trim.bt2.bam > PK6A.trim.bt2.
-mv PN6.trim.bt2.bam PN6_2.trim.bt2.bam > PN6A.trim.bt2.bam
+samtools merge FC12m.trim.bt2.bam FC12B.trim.bt2.bam FC12B_2.trim.bt2.bam
+samtools merge FN44m.trim.bt2.bam FN44B.trim.bt2.bam FN44B_2.trim.bt2.bam 
+samtools merge FR23m.trim.bt2.bam FR23C.trim.bt2.bam FR23C_2.trim.bt2.bam 
+samtools merge PB22m.trim.bt2.bam PB22A.trim.bt2.bam PB22A_2.trim.bt2.bam
+samtools merge PK6m.trim.bt2.bam PK6.trim.bt2.bam PK6_2.trim.bt2.bam 
+samtools merge PN6m.trim.bt2.bam PN6.trim.bt2.bam PN6_2.trim.bt2.bam 
 
-rm -rf FC12B.trim.bt2.bam
-rm -rf FC12B_2.trim.bt2.bam
-rm -rf FN44B.trim.bt2.bam
-rm -rf FN44B_2.trim.bt2.bam
-rm -rf FR23C.trim.bt2.bam
-rm -rf FR23C_2.trim.bt2.bam
-rm -rf PB22A.trim.bt2.bam
-rm -rf PB22A_2.trim.bt2.bam
-rm -rf PK6.trim.bt2.bam
-rm -rf PK6_2.trim.bt2.bam
-rm -rf PN6.trim.bt2.bam
-rm -rf PN6_2.trim.bt2.bam
+
+# move the extra files to a different directory
+
+mv FC12B.trim.bt2.bam extra_bams
+mv FC12B_2.trim.bt2.bam extra_bams
+mv FN44B.trim.bt2.bam extra_bams
+mv FN44B_2.trim.bt2.bam extra_bams
+mv FR23C.trim.bt2.bam extra_bams
+mv FR23C_2.trim.bt2.bam extra_bams
+mv PB22A.trim.bt2.bam extra_bams
+mv PB22A_2.trim.bt2.bam extra_bams
+mv PB22A.trim.bt2.bam extra_bams
+mv PB22A_2.trim.bt2.bam extra_bams
+mv PK6.trim.bt2.bam extra_bams
+mv PK6_2.trim.bt2.bam  extra_bams
+mv PN6.trim.bt2.bam extra_bams
+mv PN6_2.trim.bt2.bam extra_bams
+mv FN33A.trim.bt2.bam extra_bams # removed because it sequenced poorly and was giving wonky results
+mv PB13B.trim.bt2.bam extra_bams # removed because outlier on PCA
+
 
