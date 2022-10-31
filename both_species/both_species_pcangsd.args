@@ -1,0 +1,7 @@
+PCAngsd v1.11
+Time: 04/10/2022 16:33:15
+Directory: /projectnb/coral/crepidula
+Options:
+	-beagle both_species_results.beagle.gz
+	-out both_species_pcangsd
+	-admix

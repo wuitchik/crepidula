@@ -1,6 +1,6 @@
 	-> angsd version: 0.935 (htslib: 1.13-42-g7ecf4e4) build(Oct 15 2021 16:59:31)
 	-> angsd -b plana_bams -GL 1 -uniqueOnly 1 -remove_bads 1 -minMapQ 20 -minQ 30 -dosnpstat 1 -doHWE 1 -sb_pval 1e-5 -hetbias_pval 1e-5 -skipTriallelic 1 -minInd 69 -snp_pval 1e-5 -minMaf 0.05 -setMinDepthInd 1 -doMajorMinor 1 -doMaf 1 -doCounts 1 -makeMatrix 1 -doIBS 1 -doCov 1 -doGeno 8 -doBcf 1 -doPost 1 -doGlf 2 -P 1 -out plana_results 
-	-> Wed Sep 28 18:00:37 2022
+	-> Thu Sep 29 10:28:13 2022
 ----------------
 multiReader.cpp:
 	-nLines	50	(Number of lines to read)
@@ -258,5 +258,5 @@ abcWriteBcf.cpp:
 		->"plana_results.covMat"
 		->"plana_results.bcf"
 
-	[ALL done] cpu-time used =  309.04 sec
+	[ALL done] cpu-time used =  347.41 sec
 	[ALL done] walltime used =  353.00 sec

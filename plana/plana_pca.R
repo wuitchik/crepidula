@@ -5,14 +5,13 @@ library(vegan)
 
 # metadata
 expDesign = read.csv("../expDesign.csv") %>%
-  filter(Species == "Crepidula fornicata")
+  mutate(Site = factor(Site, levels = c("Robbinston", "Kettle Cove", "Beverly", "Newport", "Cape May"))) %>%
+  filter(Species == "Crepidula plana")
 
-# choose either of the following two covarince matrices:
-co = as.matrix(read.table("fornicata_results.covMat")) # covariance based on single-read resampling
-#co = as.matrix(read.table("ok.covar")) # covariance by ngsCovar
-dimnames(co)=list(expDesign$Sample)
+# covariance matric
+co = as.matrix(read.table("plana_results.covMat"))
 
-# PCoA and CAP (constranied analysis of proximities)  
+#  PCoA and CAP (constranied analysis of proximities)  
 conds=data.frame(expDesign$Site)
 pp0=capscale(as.dist(1-cov2cor(co))~1) # PCoA
 pp=capscale(as.dist(1-cov2cor(co))~expDesign$Site,conds) # CAP
@@ -20,35 +19,25 @@ pp=capscale(as.dist(1-cov2cor(co))~expDesign$Site,conds) # CAP
 # significance of by-site divergence, based on 1-correlation as distance
 adonis(as.dist(1-cov2cor(co))~expDesign$Site,conds)
 
-# eigenvectors: how many are interesting?
+#  eigenvectors: how many are interesting?
 plot(pp0$CA$eig) 
 
 kmeans.axes <- sum(diff(summary(eigenvals(pp0))[2,])*-1 > 0.01) #based on eigen plot
-kmeans.axes
-
+kmeans.axes #[1] only one is really doing much
 axes2plot=c(1,2)  
 
-cc=pp0
+pca = as.data.frame(pp0$CA$u[,axes2plot])
 
-colors=as.numeric(as.factor(expDesign$Site))
-
-plot(cc,choices=axes2plot,type="n") # choices - axes to display
-points(cc,choices=axes2plot,pch=19, col = colors)
-ordispider(cc,choices= axes2plot,groups=expDesign$Site,col=colors)
-ordiellipse(cc,choices= axes2plot,groups= expDesign$Site,draw="polygon",col=colors)
+eigenvals=pp0$CA$eig
+#calc variance explained
+varexplained=eigenvals/sum(eigenvals)
+colours = c("Robbinston" = "#264D59", "Kettle Cove" = "#43978D","Beverly" = "#F9E07F", "Newport" = "#F9AD6A","Cape May" = "#D46C4E")
 
 
-ma <- as.matrix(read.table("fornicata_results.ibsMat"))
-e <- eigen(ma)
-plot(e$vectors[,1:2],xlab="PC1",ylab="PC2")
-ordiellipse(e$vectors[,1:2],groups=expDesign$Site,draw="polygon", col=colors, label = T)
-
-scores <- e$vectors[,1:2]
-df <- cbind(scores,expDesign)
-df <- unname(df)
-colnames(df) <- c("PC1","PC2","Sample","Species","Site","Lane")
-
-ggplot(df,aes(x=PC1,y=PC2,color=Site))+
-  geom_point(size=2)+
-  theme_cowplot()
-
+ggplot(pca, aes(MDS1, MDS2)) +
+  geom_point(size=3,pch =21, aes(fill=expDesign$Site))  +
+  theme_classic(base_size = 20) +
+  xlab(paste0("MDS1 (",formatC((varexplained[1]*100), digits = 2, format = "f"),"%)")) +
+  ylab(paste0("MDS2 (",formatC((varexplained[2]*100), digits = 2, format = "f"),"%)")) +
+  scale_fill_manual(values = colours) +
+  guides(fill = guide_legend(title = "Site"))

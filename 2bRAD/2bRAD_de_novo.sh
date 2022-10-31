@@ -191,3 +191,21 @@ mv FN33A.trim.bt2.bam extra_bams # removed because it sequenced poorly and was g
 mv PB13B.trim.bt2.bam extra_bams # removed because outlier on PCA
 
 
+### Running pcangsd. 
+# Had issues getting the python script to run properly on the cluster, so used a conda environment workaround. 
+
+git clone https://github.com/Rosemeis/pcangsd.git
+cd pcangsd/
+conda env create -f environment.yml
+conda activate pcangsd
+conda install -c conda-forge cython
+python setup.py build_ext --inplace
+pip3 install -e .
+
+
+# actually running pcangst
+
+pcangsd -b fornicata_results.beagle.gz -o fornicata_pcangsd --admix 
+pcangsd -b plana_results.beagle.gz -o plana_pcangsd --admix 
+pcangsd -b both_species_results.beagle.gz -o both_species_pcangsd --admix 
+
