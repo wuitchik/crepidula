@@ -41,3 +41,5 @@ ggplot(pca, aes(MDS1, MDS2)) +
   ylab(paste0("MDS2 (",formatC((varexplained[2]*100), digits = 2, format = "f"),"%)")) +
   scale_fill_manual(values = colours) +
   guides(fill = guide_legend(title = "Site"))
+
+ggsave(plot = last_plot(), "plana_pca.pdf")
