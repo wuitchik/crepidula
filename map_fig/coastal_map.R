@@ -6,6 +6,7 @@ library(sf)
 library(rnaturalearth)
 library(rnaturalearthdata)
 library(maptools)
+library(tidyverse)
 
 #c lip gshhs_f.b to the broader area that you want to include in your map. gshhs_f.b is the high definition noaa coastline layer
 if (!rgeosStatus()) gpclibPermit()
@@ -87,3 +88,4 @@ os_map = ggplot() +
               xlim = c(-76.9,-76.42),
               ylim = c(34.5,35)) +
   theme_bw()
+

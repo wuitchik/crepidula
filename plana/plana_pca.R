@@ -34,8 +34,8 @@ varexplained=eigenvals/sum(eigenvals)
 colours = c("Robbinston" = "#264D59", "Kettle Cove" = "#43978D","Beverly" = "#F9E07F", "Newport" = "#F9AD6A","Cape May" = "#D46C4E")
 
 
-ggplot(pca, aes(MDS1, MDS2)) +
-  geom_point(size=3,pch =21, aes(fill=expDesign$Site))  +
+plana_plot = ggplot(pca, aes(MDS1, MDS2)) +
+  geom_point(size=3.5, pch=21,aes(fill=expDesign$Site))  +
   theme_classic(base_size = 20) +
   xlab(paste0("MDS1 (",formatC((varexplained[1]*100), digits = 2, format = "f"),"%)")) +
   ylab(paste0("MDS2 (",formatC((varexplained[2]*100), digits = 2, format = "f"),"%)")) +
