@@ -1,0 +1,8 @@
+Site	Lat	Long
+Robbinston	45.08383	-67.11001
+Kettle Cove	43.33408	-70.13083
+Beverly	42.32482	-70.51469
+Newport	41.34293	-71.17138
+Cape May	38.58468	-74.57408
+
+
