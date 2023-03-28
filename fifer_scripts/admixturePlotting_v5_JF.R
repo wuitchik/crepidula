@@ -6,7 +6,7 @@ dir=("C:/Users/james/My Drive/Documents/BOSTON/Davies/Astrangia/Astrangia&Oculin
 #ngsAdmix
 #inName="mydata_k4_r6.qopt" # name of the input file to plot, output of ngsAdmix or ADMIXTURE run
 #inName="myresult2.6.Q"
-inName="myresult_dep1.4.Q"
+inName="myresult_dep1.4.Q"fin
 k=4
 
 samples=data.frame(read.csv("../Adapter2Sample.csv", header=T))#[,3:4])

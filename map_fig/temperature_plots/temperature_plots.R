@@ -179,8 +179,6 @@ CM_plot =
 
 ggsave("Cape_May_profile.pdf", plot = CM_plot, width = 4, height = 4, units = "in")
 
-Zissou1 = c("#3B9AB2", "#78B7C5", "#EBCC2A", "#E1AF00", "#F21A00")
-
 
 ggplot(RB_temp, aes(x = Date, y = Water_Temperature)) +
   geom_line(data = RB_temp, aes(x = Date, y = Water_Temperature), color = "#264D59", alpha = 0.3) +
@@ -188,24 +186,67 @@ ggplot(RB_temp, aes(x = Date, y = Water_Temperature)) +
   geom_line(data = BV_temp, aes(x = Date, y = Water_Temperature), color = "#F9E07F", alpha = 0.3) +
   geom_line(data = NP_temp, aes(x = Date, y = Water_Temperature), color = "#F9AD6A", alpha = 0.3) +
   geom_line(data = CM_temp, aes(x = Date, y = Water_Temperature), color = "#D46C4E", alpha = 0.3) + 
-  geom_smooth(data = RB_temp, aes(x = Date, y = Water_Temperature, color = "Robbinston")) +
+  
+  geom_smooth(data = RB_temp, aes(x = Date, y = Water_Temperature, color = "Black"), size = 1.5) +
+  geom_smooth(data = RB_temp, aes(x = Date, y = Water_Temperature, color = "Robbinston"), size = 1) +
+  
+  geom_smooth(data = KC_temp, aes(x = Date, y = Water_Temperature, color = "Black"), size = 1.5) +
   geom_smooth(data = KC_temp, aes(x = Date, y = Water_Temperature, color = "Kettle Cove")) +
+  
+  geom_smooth(data = BV_temp, aes(x = Date, y = Water_Temperature, color = "Black"), size = 1.5) +
   geom_smooth(data = BV_temp, aes(x = Date, y = Water_Temperature, color = "Beverly")) +
+  
+  geom_smooth(data = NP_temp, aes(x = Date, y = Water_Temperature, color = "Black"), size = 1.5) +
   geom_smooth(data = NP_temp, aes(x = Date, y = Water_Temperature, color = "Newport")) +
+  
+  geom_smooth(data = CM_temp, aes(x = Date, y = Water_Temperature, color = "Black"), size = 1.5) +
   geom_smooth(data = CM_temp, aes(x = Date, y = Water_Temperature, color = "Cape May")) + 
-  scale_colour_manual(name="Site", values=c("Robbinston" =  "#264D59",
+  scale_colour_manual(name="Site", values=c("Black" = "Black",
+                                            "Robbinston" =  "#264D59",
+                                            "Kettle Cove" = "#43978D",
+                                            "Beverly"=      "#F9E07F",
+                                            "Newport" =     "#F9AD6A",
+                                            "Cape May" =    "#D46C4E")) +
+  scale_y_continuous(breaks = c(5, 10, 15, 20, 25)) +
+  theme_classic()
+
+ ggsave("temp_plot.pdf", last_plot(), width = 5, height = 5, unit = "in" )
+
+
+colours = c("Robbinston" = "#264D59", "Kettle Cove" = "#43978D","Beverly" = "#F9E07F", "Newport" = "#F9AD6A","Cape May" = "#D46C4E")
+
+
+
+ggplot(RB_temp, aes(x = Date, y = Air_Temperature)) +
+  geom_line(data = RB_temp, aes(x = Date, y = Air_Temperature), color = "#264D59", alpha = 0.3) +
+  geom_line(data = KC_temp, aes(x = Date, y = Air_Temperature), color = "#43978D", alpha = 0.3) +
+  geom_line(data = BV_temp, aes(x = Date, y = Air_Temperature), color = "#F9E07F", alpha = 0.3) +
+  geom_line(data = NP_temp, aes(x = Date, y = Air_Temperature), color = "#F9AD6A", alpha = 0.3) +
+  geom_line(data = CM_temp, aes(x = Date, y = Air_Temperature), color = "#D46C4E", alpha = 0.3) + 
+  
+  geom_smooth(data = RB_temp, aes(x = Date, y = Air_Temperature, color = "Black"), size = 1.5) +
+  geom_smooth(data = RB_temp, aes(x = Date, y = Air_Temperature, color = "Robbinston"), size = 1) +
+  
+  geom_smooth(data = KC_temp, aes(x = Date, y = Air_Temperature, color = "Black"), size = 1.5) +
+  geom_smooth(data = KC_temp, aes(x = Date, y = Air_Temperature, color = "Kettle Cove")) +
+  
+  geom_smooth(data = BV_temp, aes(x = Date, y = Air_Temperature, color = "Black"), size = 1.5) +
+  geom_smooth(data = BV_temp, aes(x = Date, y = Air_Temperature, color = "Beverly")) +
+  
+  geom_smooth(data = NP_temp, aes(x = Date, y = Air_Temperature, color = "Black"), size = 1.5) +
+  geom_smooth(data = NP_temp, aes(x = Date, y = Air_Temperature, color = "Newport")) +
+  
+  geom_smooth(data = CM_temp, aes(x = Date, y = Air_Temperature, color = "Black"), size = 1.5) +
+  geom_smooth(data = CM_temp, aes(x = Date, y = Air_Temperature, color = "Cape May")) + 
+  scale_colour_manual(name="Site", values=c("Black" = "Black",
+                                            "Robbinston" =  "#264D59",
                                             "Kettle Cove" = "#43978D",
                                             "Beverly"=      "#F9E07F",
                                             "Newport" =     "#F9AD6A",
                                             "Cape May" =    "#D46C4E")) +
   theme_classic()
 
-ggsave("temp_plot5.png", last_plot())
-
-Zissou1 = c("#3B9AB2", "#78B7C5", "#EBCC2A", "#E1AF00", "#F21A00")
-
-colours = c("Robbinston" = "#264D59", "Kettle Cove" = "#43978D","Beverly" = "#F9E07F", "Newport" = "#F9AD6A","Cape May" = "#D46C4E")
-
+ggsave("air_temp_plot.pdf", last_plot(), width = 5, height = 5, unit = "in" )
 
 
 

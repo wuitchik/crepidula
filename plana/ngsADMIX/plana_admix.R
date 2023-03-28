@@ -11,7 +11,7 @@ write.table(expDesign, "i2p", sep = "\t", row.names = F)
 
 # assembling the input table
 dir="" # path to input files
-inName="plana_k4.qopt" # name of the input file to plot, output of ngsAdmix or ADMIXTURE run
+inName="plana_k5.qopt" # name of the input file to plot, output of ngsAdmix or ADMIXTURE run
 pops="i2p" # 2-column tab-delimited table of individual assignments to populations; must be in the same order as samples in the bam list or vcf file.
 
 #------------
