@@ -35,38 +35,54 @@ angsd sites index both_allSites
 export GENOME_REF=cdh_alltags_cc.fasta
 TODO="-doSaf 1 -doMajorMinor 1 -doMaf 1 -doPost 1 -anc $GENOME_REF -ref $GENOME_REF"
 
-
-################ to here
-
-angsd -sites allSites -b p_cape_may_bams -GL 1 -P 1 -minInd 16 $TODO -out PC_all
-angsd -sites allSites -b p_beverly_bams -GL 1 -P 1 -minInd 15 $TODO -out PB_all
-angsd -sites allSites -b p_kettle_cove_bams -GL 1 -P 1 -minInd 13 $TODO -out PK_all
-angsd -sites allSites -b p_newport_bams -GL 1 -P 1 -minInd 16 $TODO -out PN_all
-
-# generating per-population SFS
-realSFS PC_all.saf.idx > PC_all.sfs
-realSFS PB_all.saf.idx > PB_all.sfs
-realSFS PK_all.saf.idx > PK_all.sfs
-realSFS PN_all.saf.idx > PN_all.sfs
-
 # writing down 2d-SFS priors
-realSFS PC_all.saf.idx PN_all.saf.idx -P 24 > PC_all_2_PN_all.sfs ; realSFS fst index PC_all.saf.idx PN_all.saf.idx -sfs PC_all_2_PN_all.sfs -fstout PC_all_2_PN_all
-realSFS PC_all.saf.idx PK_all.saf.idx -P 24 > PC_all_2_PK_all.sfs ; realSFS fst index PC_all.saf.idx PK_all.saf.idx -sfs PC_all_2_PK_all.sfs -fstout PC_all_2_PK_all
-realSFS PC_all.saf.idx PB_all.saf.idx -P 24 > PC_all_2_PB_all.sfs ; realSFS fst index PC_all.saf.idx PB_all.saf.idx -sfs PC_all_2_PB_all.sfs -fstout PC_all_2_PB_all
 
-realSFS PB_all.saf.idx PN_all.saf.idx -P 24 > PB_all_2_PN_all.sfs ; realSFS fst index PB_all.saf.idx PN_all.saf.idx -sfs PB_all_2_PN_all.sfs -fstout PB_all_2_PN_all
-realSFS PB_all.saf.idx PK_all.saf.idx -P 24 > PB_all_2_PK_all.sfs ; realSFS fst index PB_all.saf.idx PK_all.saf.idx -sfs PB_all_2_PK_all.sfs -fstout PB_all_2_PK_all
+# within pops
+realSFS FC_all.saf.idx PC_all.saf.idx -P 24 > FC_all_2_PC_all.sfs ; realSFS fst index FC_all.saf.idx PC_all.saf.idx -sfs FC_all_2_PC_all.sfs -fstout FC_all_2_PC_all
+realSFS FN_all.saf.idx PN_all.saf.idx -P 24 > FN_all_2_PN_all.sfs ; realSFS fst index FN_all.saf.idx PN_all.saf.idx -sfs FN_all_2_PN_all.sfs -fstout FN_all_2_PN_all
+realSFS FB_all.saf.idx PB_all.saf.idx -P 24 > FB_all_2_PB_all.sfs ; realSFS fst index FB_all.saf.idx PB_all.saf.idx -sfs FB_all_2_PB_all.sfs -fstout FB_all_2_PB_all
+realSFS FK_all.saf.idx PK_all.saf.idx -P 24 > FK_all_2_PK_all.sfs ; realSFS fst index FK_all.saf.idx PK_all.saf.idx -sfs FK_all_2_PK_all.sfs -fstout FK_all_2_PK_all
 
-realSFS PK_all.saf.idx PN_all.saf.idx -P 24 > PK_all_2_PN_all.sfs ; realSFS fst index PK_all.saf.idx PN_all.saf.idx -sfs PK_all_2_PN_all.sfs -fstout PK_all_2_PN_all
+# between pops
 
+realSFS FC_all.saf.idx PN_all.saf.idx -P 24 > FC_all_2_PN_all.sfs ; realSFS fst index FC_all.saf.idx PN_all.saf.idx -sfs FC_all_2_PN_all.sfs -fstout FC_all_2_PN_all
+realSFS FC_all.saf.idx PB_all.saf.idx -P 24 > FC_all_2_PB_all.sfs ; realSFS fst index FC_all.saf.idx PB_all.saf.idx -sfs FC_all_2_PB_all.sfs -fstout FC_all_2_PB_all
+realSFS FC_all.saf.idx PK_all.saf.idx -P 24 > FC_all_2_PK_all.sfs ; realSFS fst index FC_all.saf.idx PK_all.saf.idx -sfs FC_all_2_PK_all.sfs -fstout FC_all_2_PK_all
+
+realSFS FN_all.saf.idx PC_all.saf.idx -P 24 > FN_all_2_PC_all.sfs ; realSFS fst index FN_all.saf.idx PC_all.saf.idx -sfs FN_all_2_PC_all.sfs -fstout FN_all_2_PC_all
+realSFS FN_all.saf.idx PB_all.saf.idx -P 24 > FN_all_2_PB_all.sfs ; realSFS fst index FN_all.saf.idx PB_all.saf.idx -sfs FN_all_2_PB_all.sfs -fstout FN_all_2_PB_all
+realSFS FN_all.saf.idx PK_all.saf.idx -P 24 > FN_all_2_PK_all.sfs ; realSFS fst index FN_all.saf.idx PK_all.saf.idx -sfs FN_all_2_PK_all.sfs -fstout FN_all_2_PK_all
+
+realSFS FB_all.saf.idx PC_all.saf.idx -P 24 > FB_all_2_PC_all.sfs ; realSFS fst index FB_all.saf.idx PC_all.saf.idx -sfs FB_all_2_PC_all.sfs -fstout FB_all_2_PC_all
+realSFS FB_all.saf.idx PN_all.saf.idx -P 24 > FB_all_2_PN_all.sfs ; realSFS fst index FB_all.saf.idx PN_all.saf.idx -sfs FB_all_2_PN_all.sfs -fstout FB_all_2_PN_all
+realSFS FB_all.saf.idx PK_all.saf.idx -P 24 > FB_all_2_PK_all.sfs ; realSFS fst index FB_all.saf.idx PK_all.saf.idx -sfs FB_all_2_PK_all.sfs -fstout FB_all_2_PK_all
+
+realSFS FK_all.saf.idx PC_all.saf.idx -P 24 > FK_all_2_PC_all.sfs ; realSFS fst index FK_all.saf.idx PC_all.saf.idx -sfs FK_all_2_PC_all.sfs -fstout FK_all_2_PC_all
+realSFS FK_all.saf.idx PN_all.saf.idx -P 24 > FK_all_2_PN_all.sfs ; realSFS fst index FK_all.saf.idx PN_all.saf.idx -sfs FK_all_2_PN_all.sfs -fstout FK_all_2_PN_all
+realSFS FK_all.saf.idx PB_all.saf.idx -P 24 > FK_all_2_PB_all.sfs ; realSFS fst index FK_all.saf.idx PB_all.saf.idx -sfs FK_all_2_PB_all.sfs -fstout FK_all_2_PB_all
 
 
 # global Fst between populations
-realSFS fst stats PC_all_2_PN_all.fst.idx # 0.013560	0.007467
-realSFS fst stats PC_all_2_PK_all.fst.idx # 0.012498	0.011726
-realSFS fst stats PC_all_2_PB_all.fst.idx # 0.013381	0.008348
-realSFS fst stats PB_all_2_PN_all.fst.idx # 0.017689	0.006908
-realSFS fst stats PB_all_2_PK_all.fst.idx # 0.013411	0.010094
-realSFS fst stats PK_all_2_PN_all.fst.idx # 0.016482	0.016119
+realSFS fst stats FC_all_2_PC_all.fst.idx # 0.022151	0.567758
+realSFS fst stats FN_all_2_PN_all.fst.idx # 0.029775	0.601601
+realSFS fst stats FB_all_2_PB_all.fst.idx # 0.022066	0.355131
+realSFS fst stats FK_all_2_PK_all.fst.idx # 0.031526	0.607662
+
+realSFS fst stats FC_all_2_PN_all.fst.idx # 0.028166	0.598099
+realSFS fst stats FC_all_2_PB_all.fst.idx # 0.017951	0.358750
+realSFS fst stats FC_all_2_PK_all.fst.idx # 0.030262	0.607609
+
+realSFS fst stats FN_all_2_PC_all.fst.idx # 0.028936	0.565859
+realSFS fst stats FN_all_2_PB_all.fst.idx # 0.027976	0.379096
+realSFS fst stats FN_all_2_PK_all.fst.idx # 0.030041	0.608804
+
+realSFS fst stats FB_all_2_PC_all.fst.idx # 0.026548	0.569375
+realSFS fst stats FB_all_2_PN_all.fst.idx # 0.036898	0.596257
+realSFS fst stats FB_all_2_PK_all.fst.idx # 0.034837	0.604402
+
+realSFS fst stats FK_all_2_PC_all.fst.idx # 0.028053	0.550662
+realSFS fst stats FK_all_2_PN_all.fst.idx # 0.031345	0.598368
+realSFS fst stats FK_all_2_PB_all.fst.idx # 0.027940	0.358385
+
 
 
