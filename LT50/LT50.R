@@ -123,13 +123,20 @@ f.Newport = print.LT50(f.Newport.lt50) %>%
 
 
 
+
 ## Plot
+f.data = f.data %>%
+  mutate(Species = as.factor(Species), 
+         Population = factor(Population, levels = c("Robbinston", "Kettle Cove", "Beverly","Newport", "Cape May"))) 
+
 ggplot(f.data, aes(Temperature, Survivorship)) +
   geom_point(outlier.shape = NA) +
   geom_smooth(method = glm,
               method.args = list(family = "binomial")) +
   theme_bw() +
-  facet_wrap(. ~ Population)
+  facet_wrap(. ~ Population, ncol = 1)
+
+ggsave("survivorship.jpeg", last_plot(), height = 5.6, width = 1.5, units = "in")
 
 ggplot(p.data, aes(Temperature, Survivorship)) +
   geom_point(alpha = 0.5) +
@@ -143,15 +150,29 @@ ggplot(p.data, aes(Temperature, Survivorship)) +
 lt50 = rbind(p.beverly, p.CapeMay, f.beverly, f.CapeMay, f.Robbinston, f.Newport, f.KettleCove) %>%
   mutate(Species = as.factor(Species), 
          Population = factor(Population, levels = c("Cape May", "Newport", "Beverly", "Kettle Cove", "Robbinston"))) 
-  
+
+
+
+f.lt50 = lt50 %>%
+  filter(Species == "Crepidula fornicata") %>%
+  rename(Site = Population)
 
 # plot
 library(forcats)
 
-ggplot(lt50, aes(Population, LT50, group = Species)) +
-  geom_pointrange(aes(ymin = LT50-SE, ymax = LT50+SE, colour = Species), position = position_dodge(width = 0.5)) + 
-  theme_classic()
+colours = c("Robbinston" = "#264D59", "Kettle Cove" = "#43978D","Beverly" = "#F9E07F", "Newport" = "#F9AD6A","Cape May" = "#D46C4E")
+
+ggplot(f.lt50, aes(LT50, Site, color = Site)) +
+  geom_pointrange(aes(xmin = LT50-SE, xmax = LT50+SE, colour = Site), position = position_dodge(width = 0.5)) + 
+  geom_point(size=4, pch=21,aes(fill=Site), colour = "black")  +
+  geom_point(size=3.5, pch=21,aes(fill=Site)) +
+  scale_fill_manual(values = colours) +
+  scale_colour_manual(values = colours) +
+  theme_classic() +
+  theme(legend.position = "none") 
  
+
+ggsave("lt50_plot.jpeg", last_plot(), height = 4, width = 4, units = "in")
 
 
 
