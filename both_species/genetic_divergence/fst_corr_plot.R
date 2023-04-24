@@ -3,15 +3,15 @@
 library(tidyverse)
 library(corrplot)
 
-data = read.csv("fst_cleaned.csv") %>%
-  mutate(Y = factor(Y, levels = c("Cape_May", "Newport", "Beverly", "Kettle_Cove", "Robbinston"))) %>%
-  mutate(X = factor(X, levels = c("Cape_May", "Newport", "Beverly", "Kettle_Cove", "Robbinston")))
+data = read.csv("both_fst.csv") %>%
+  mutate(Fornicata = factor(Fornicata, ordered= TRUE, levels = c("Cape May", "Newport", "Beverly", "Kettle Cove", "Robbinston"))) %>%
+  mutate(Plana = factor(Plana, ordered= TRUE, levels = c("Cape May", "Newport", "Beverly", "Kettle Cove")))
 
-ggplot(data, aes(X, Y, fill= value)) + 
-  geom_tile((aes(fill = value)), colour="black")+
-  geom_text(aes(label = value),size=8 ) +
+ggplot(data, aes(Plana, Fornicata, fill= Fst)) + 
+  geom_tile((aes(fill = Fst)), colour="black")+
+  geom_text(aes(label = Fst),size=8 ) +
   theme_classic(base_size = 22)+
-  scale_fill_gradient2(low = "white", high="orange", midpoint = 0.022) +
+  scale_fill_gradient2(low = "white", high="orange", midpoint = 0.4819675) +
   guides(fill=guide_legend(title="Fst"))+
   xlab(label = "")+ ylab(label="")
 
