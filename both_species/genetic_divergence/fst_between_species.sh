@@ -61,6 +61,11 @@ realSFS FK_all.saf.idx PC_all.saf.idx -P 24 > FK_all_2_PC_all.sfs ; realSFS fst 
 realSFS FK_all.saf.idx PN_all.saf.idx -P 24 > FK_all_2_PN_all.sfs ; realSFS fst index FK_all.saf.idx PN_all.saf.idx -sfs FK_all_2_PN_all.sfs -fstout FK_all_2_PN_all
 realSFS FK_all.saf.idx PB_all.saf.idx -P 24 > FK_all_2_PB_all.sfs ; realSFS fst index FK_all.saf.idx PB_all.saf.idx -sfs FK_all_2_PB_all.sfs -fstout FK_all_2_PB_all
 
+realSFS FR_all.saf.idx PC_all.saf.idx -P 24 > FR_all_2_PC_all.sfs ; realSFS fst index FR_all.saf.idx PC_all.saf.idx -sfs FR_all_2_PC_all.sfs -fstout FR_all_2_PC_all
+realSFS FR_all.saf.idx PN_all.saf.idx -P 24 > FR_all_2_PN_all.sfs ; realSFS fst index FR_all.saf.idx PN_all.saf.idx -sfs FR_all_2_PN_all.sfs -fstout FR_all_2_PN_all
+realSFS FR_all.saf.idx PB_all.saf.idx -P 24 > FR_all_2_PB_all.sfs ; realSFS fst index FR_all.saf.idx PB_all.saf.idx -sfs FR_all_2_PB_all.sfs -fstout FR_all_2_PB_all
+realSFS FR_all.saf.idx PK_all.saf.idx -P 24 > FR_all_2_PK_all.sfs ; realSFS fst index FR_all.saf.idx PK_all.saf.idx -sfs FR_all_2_PK_all.sfs -fstout FR_all_2_PK_all
+
 
 # global Fst between populations
 realSFS fst stats FC_all_2_PC_all.fst.idx # 0.022151	0.567758
@@ -84,5 +89,8 @@ realSFS fst stats FK_all_2_PC_all.fst.idx # 0.028053	0.550662
 realSFS fst stats FK_all_2_PN_all.fst.idx # 0.031345	0.598368
 realSFS fst stats FK_all_2_PB_all.fst.idx # 0.027940	0.358385
 
-
+realSFS fst stats FR_all_2_PC_all.fst.idx # 0.030544	0.573387
+realSFS fst stats FR_all_2_PN_all.fst.idx # 0.040217	0.597676
+realSFS fst stats FR_all_2_PB_all.fst.idx # 0.025919	0.378627
+realSFS fst stats FR_all_2_PK_all.fst.idx # 0.038576	0.605078
 

@@ -1,0 +1,13 @@
+﻿,,,,,,,,,,Kettle_Cove,Beverly,Newport,Cape_May
+,Robbinston,,,,,,,,Kettle_Cove,,0.013411,0.016482,0.012498
+Kettle_Cove,0.019868,Kettle_Cove,,,,,,,Beverly,0.013411,,0.017689,0.013381
+Beverly,0.018382,0.020613,Beverly,,,,,,Newport,0.016482,0.017689,,0.01356
+Newport,0.023154,0.022944,0.023183,Newport,,,,,Cape_May,0.012498,0.013381,0.01356,
+Cape_May,0.028121,0.028155,0.01562,0.020421,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,Kettle_Cove,Beverly,Newport,Cape_May
+,Kettle_Cove,,,,,,,,Kettle_Cove,x,0.007857,0.013728,0.013758
+Beverly,0.007857,Beverly,,,,,,,Beverly,0.007857,x,0.007064,0.007872
+Newport,0.013728,0.007064,Newport,,,,,,Newport,0.013728,0.007064,x,0.009557
+Cape_May,0.013758,0.007872,0.009557,,,,,,Cape_May,0.013758,0.007872,0.009557,x
