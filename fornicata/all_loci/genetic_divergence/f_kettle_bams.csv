@@ -1,0 +1,166 @@
+Sample,Species,Site,Lane,Quality
+FB11A,Crepidula fornicata,Beverly,2,0.810217421
+FB12A,Crepidula fornicata,Beverly,2,0.724972361
+FB13A,Crepidula fornicata,Beverly,2,0.899817596
+FB13B,Crepidula fornicata,Beverly,2,0.841292
+FB14A,Crepidula fornicata,Beverly,1,0.720212636
+FB14B,Crepidula fornicata,Beverly,2,0.710689589
+FB21A,Crepidula fornicata,Beverly,1,0.710806017
+FB21B,Crepidula fornicata,Beverly,1,0.81106181
+FB22A,Crepidula fornicata,Beverly,1,0.763802206
+FB22B,Crepidula fornicata,Beverly,2,0.873746216
+FB23A,Crepidula fornicata,Beverly,1,0.867544264
+FB23B,Crepidula fornicata,Beverly,2,0.713319781
+FB23C,Crepidula fornicata,Beverly,2,0.596208941
+FB32A,Crepidula fornicata,Beverly,1,0.683801605
+FB41A,Crepidula fornicata,Beverly,2,0.48137522
+FB42B,Crepidula fornicata,Beverly,1,0.47940032
+FB44A,Crepidula fornicata,Beverly,1,0.827970408
+FC12A,Crepidula fornicata,Cape May,2,0.480227931
+FC12m,Crepidula fornicata,Cape May,2,0.760709778
+FC13A,Crepidula fornicata,Cape May,1,0.673095021
+FC14A,Crepidula fornicata,Cape May,1,0.678071351
+FC21A,Crepidula fornicata,Cape May,1,0.76079576
+FC21B,Crepidula fornicata,Cape May,2,0.514049136
+FC22A,Crepidula fornicata,Cape May,1,0.74780956
+FC22B,Crepidula fornicata,Cape May,1,0.932191556
+FC24A,Crepidula fornicata,Cape May,1,0.648046594
+FC24B,Crepidula fornicata,Cape May,2,0.77028721
+FC31A,Crepidula fornicata,Cape May,2,0.842815938
+FC32A,Crepidula fornicata,Cape May,1,0.84672498
+FC32B,Crepidula fornicata,Cape May,1,0.82657845
+FC33A,Crepidula fornicata,Cape May,1,0.582751404
+FC33B,Crepidula fornicata,Cape May,2,0.436672525
+FC33C,Crepidula fornicata,Cape May,2,0.932663691
+FC34A,Crepidula fornicata,Cape May,2,0.545168709
+FC41A,Crepidula fornicata,Cape May,2,0.707591995
+FC42A,Crepidula fornicata,Cape May,1,0.739366679
+FC43A,Crepidula fornicata,Cape May,2,0.698821015
+FK11B,Crepidula fornicata,Kettle Cove,1,0.703957262
+FK12A,Crepidula fornicata,Kettle Cove,1,0.426072037
+FK21A,Crepidula fornicata,Kettle Cove,1,0.369565362
+FK21B,Crepidula fornicata,Kettle Cove,1,0.350513177
+FK22A,Crepidula fornicata,Kettle Cove,1,0.866611255
+FK23A,Crepidula fornicata,Kettle Cove,2,0.604776358
+FK24B,Crepidula fornicata,Kettle Cove,2,0.577447882
+FK31A,Crepidula fornicata,Kettle Cove,1,0.928501376
+FK33A,Crepidula fornicata,Kettle Cove,2,0.673418903
+FK33B,Crepidula fornicata,Kettle Cove,2,0.397604411
+FK33C,Crepidula fornicata,Kettle Cove,2,0.343919621
+FK34A,Crepidula fornicata,Kettle Cove,1,0.579036201
+FK34B,Crepidula fornicata,Kettle Cove,2,0.574141794
+FK41A,Crepidula fornicata,Kettle Cove,1,0.703555425
+FK43A,Crepidula fornicata,Kettle Cove,2,0.669394584
+FK44A,Crepidula fornicata,Kettle Cove,1,0.508031014
+FK44B,Crepidula fornicata,Kettle Cove,2,0.643611118
+FK44C,Crepidula fornicata,Kettle Cove,1,0.818556935
+FN11A,Crepidula fornicata,Newport,2,0.694835431
+FN11B,Crepidula fornicata,Newport,2,0.576901761
+FN13A,Crepidula fornicata,Newport,1,0.695001358
+FN14A,Crepidula fornicata,Newport,1,0.479938402
+FN21A,Crepidula fornicata,Newport,2,0.808243127
+FN22A,Crepidula fornicata,Newport,2,0.615658313
+FN22B,Crepidula fornicata,Newport,1,0.664673912
+FN22C,Crepidula fornicata,Newport,1,0.83245105
+FN31A,Crepidula fornicata,Newport,1,0.711066714
+FN32A,Crepidula fornicata,Newport,2,0.782613062
+FN33B,Crepidula fornicata,Newport,2,0.233724844
+FN34A,Crepidula fornicata,Newport,2,0.665531953
+FN34B,Crepidula fornicata,Newport,1,0.69697059
+FN43A,Crepidula fornicata,Newport,1,0.688612441
+FN43B,Crepidula fornicata,Newport,2,0.718936534
+FN43C,Crepidula fornicata,Newport,1,0.605832537
+FN44A,Crepidula fornicata,Newport,2,0.582443683
+FN44m,Crepidula fornicata,Newport,1,0.701065508
+FN44C,Crepidula fornicata,Newport,2,0.549932656
+FR13A,Crepidula fornicata,Robbinston,2,0.592658055
+FR21A,Crepidula fornicata,Robbinston,1,0.548036344
+FR21B,Crepidula fornicata,Robbinston,1,0.57921479
+FR23B,Crepidula fornicata,Robbinston,1,0.728816049
+FR23m,Crepidula fornicata,Robbinston,1,0.547129459
+FR24A,Crepidula fornicata,Robbinston,2,0.640560778
+FR24B,Crepidula fornicata,Robbinston,2,0.823050398
+FR31A,Crepidula fornicata,Robbinston,1,0.83004171
+FR31B,Crepidula fornicata,Robbinston,1,0.669654645
+FR32A,Crepidula fornicata,Robbinston,1,0.674466396
+FR331A,Crepidula fornicata,Robbinston,1,0.57013476
+FR33A,Crepidula fornicata,Robbinston,1,0.659376661
+FR411A,Crepidula fornicata,Robbinston,1,0.693292854
+FR43A,Crepidula fornicata,Robbinston,1,0.51514959
+FR43B,Crepidula fornicata,Robbinston,2,0.693158445
+FR43C,Crepidula fornicata,Robbinston,2,0.298502559
+PB11A,Crepidula plana,Beverly,2,0.372866769
+PB11B,Crepidula plana,Beverly,1,0.855589345
+PB11C,Crepidula plana,Beverly,1,0.814185891
+PB12A,Crepidula plana,Beverly,1,0.850188583
+PB13A,Crepidula plana,Beverly,1,0.847162089
+PB14A,Crepidula plana,Beverly,2,0.825697488
+PB14B,Crepidula plana,Beverly,1,0.813422762
+PB21A,Crepidula plana,Beverly,1,0.843305886
+PB22m,Crepidula plana,Beverly,1,0.824438734
+PB23A,Crepidula plana,Beverly,2,0.747002853
+PB24A,Crepidula plana,Beverly,1,0.68101179
+PB24B,Crepidula plana,Beverly,1,0.826111897
+PB31A,Crepidula plana,Beverly,2,0.848765827
+PB32A,Crepidula plana,Beverly,1,0.842100684
+PB33A,Crepidula plana,Beverly,1,0.81027295
+PB33B,Crepidula plana,Beverly,1,0.899867502
+PB33C,Crepidula plana,Beverly,1,0.446396933
+PB34A,Crepidula plana,Beverly,2,0.829111806
+PB43A,Crepidula plana,Beverly,2,0.39949472
+PC11A,Crepidula plana,Cape May,1,0.799177892
+PC12A,Crepidula plana,Cape May,1,0.663867831
+PC13A,Crepidula plana,Cape May,1,0.365559485
+PC13C,Crepidula plana,Cape May,2,0.330104188
+PC14A,Crepidula plana,Cape May,2,0.587757611
+PC21A,Crepidula plana,Cape May,1,0.878649201
+PC22A,Crepidula plana,Cape May,1,0.551979168
+PC22B,Crepidula plana,Cape May,1,0.823543477
+PC22C,Crepidula plana,Cape May,1,0.863297689
+PC23A,Crepidula plana,Cape May,1,0.491736428
+PC23B,Crepidula plana,Cape May,2,0.491843894
+PC23C,Crepidula plana,Cape May,1,0.401106633
+PC24A,Crepidula plana,Cape May,1,0.857765043
+PC24B,Crepidula plana,Cape May,2,0.82568767
+PC31A,Crepidula plana,Cape May,2,0.667632543
+PC41A,Crepidula plana,Cape May,2,0.938835366
+PC41B,Crepidula plana,Cape May,1,0.398106688
+PC43A,Crepidula plana,Cape May,1,0.833909615
+PC43B,Crepidula plana,Cape May,2,0.451793502
+PC43C,Crepidula plana,Cape May,2,0.492619657
+PK10,Crepidula plana,Kettle Cove,2,0.610626998
+PK11,Crepidula plana,Kettle Cove,2,0.630977883
+PK12,Crepidula plana,Kettle Cove,2,0.686380764
+PK13,Crepidula plana,Kettle Cove,2,0.492485791
+PK14,Crepidula plana,Kettle Cove,1,0.744318991
+PK15,Crepidula plana,Kettle Cove,1,0.82162482
+PK17,Crepidula plana,Kettle Cove,1,0.770294488
+PK18,Crepidula plana,Kettle Cove,2,0.541902742
+PK2,Crepidula plana,Kettle Cove,2,0.599605173
+PK3,Crepidula plana,Kettle Cove,1,0.657915641
+PK4,Crepidula plana,Kettle Cove,1,0.694860658
+PK5,Crepidula plana,Kettle Cove,2,0.687159369
+PK6m,Crepidula plana,Kettle Cove,1,0.61653292
+PK7,Crepidula plana,Kettle Cove,2,0.705709307
+PK8,Crepidula plana,Kettle Cove,1,0.636537367
+PK9,Crepidula plana,Kettle Cove,1,0.664167514
+PN1,Crepidula plana,Newport,2,0.761384864
+PN10,Crepidula plana,Newport,2,0.523452135
+PN12,Crepidula plana,Newport,2,0.612534946
+PN13,Crepidula plana,Newport,1,0.654004985
+PN14,Crepidula plana,Newport,2,0.691956443
+PN15,Crepidula plana,Newport,1,0.56190804
+PN16,Crepidula plana,Newport,1,0.645782189
+PN18,Crepidula plana,Newport,1,0.826593389
+PN2,Crepidula plana,Newport,2,0.424261791
+PN20,Crepidula plana,Newport,1,0.713598605
+PN21,Crepidula plana,Newport,2,0.582230185
+PN23,Crepidula plana,Newport,1,0.561591769
+PN24,Crepidula plana,Newport,2,0.539129472
+PN25,Crepidula plana,Newport,1,0.875000243
+PN26,Crepidula plana,Newport,2,0.696649976
+PN28,Crepidula plana,Newport,1,0.676160198
+PN5,Crepidula plana,Newport,1,0.853021891
+PN6m,Crepidula plana,Newport,2,0.66299229
+PN8,Crepidula plana,Newport,2,0.695217031
+PN9,Crepidula plana,Newport,1,0.795370514

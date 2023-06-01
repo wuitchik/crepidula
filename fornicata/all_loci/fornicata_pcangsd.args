@@ -1,0 +1,7 @@
+PCAngsd v1.11
+Time: 04/10/2022 16:33:00
+Directory: /projectnb/coral/crepidula
+Options:
+	-beagle fornicata_results.beagle.gz
+	-out fornicata_pcangsd
+	-admix

@@ -1,9 +1,0 @@
-Input: lname=fornicata_results.beagle.gz nPop=3, fname=(null) qname=(null) outfiles=fornicata_k3
-Setup: seed=1665528147 nThreads=10 method=1
-Convergence: maxIter=2000 tol=0.000010 tolLike50=0.100000 dymBound=0
-Filters: misTol=0.050000 minMaf=0.050000 minLrt=0.000000 minInd=0
-Input file has dim: nsites=8101 nind=90
-Input file has dim (AFTER filtering): nsites=8101 nind=90
-	[ALL done] cpu-time used =  41.70 sec
-	[ALL done] walltime used =  7.00 sec
-best like=-547847.233292 after 550 iterations
