@@ -39,3 +39,5 @@ for (i in 1:PCs){
   dflist[[i]]=df_outliers
   names(dflist)[i]=colnames(pval)[i]
 }
+
+fornicata_outliers = dflist
