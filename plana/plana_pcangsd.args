@@ -1,7 +1,0 @@
-PCAngsd v1.11
-Time: 04/10/2022 16:33:09
-Directory: /projectnb/coral/crepidula
-Options:
-	-beagle plana_results.beagle.gz
-	-out plana_pcangsd
-	-admix

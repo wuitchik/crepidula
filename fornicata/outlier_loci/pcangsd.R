@@ -3,7 +3,7 @@
 library(tidyverse)
 library(RcppCNPy)
 
-expDesign = read.csv("../../expDesign.csv") %>%
+expDesign = read.csv("../../../expDesign.csv") %>%
   filter(Species == "Crepidula fornicata") %>%
   dplyr::select(Sample, Site)
 

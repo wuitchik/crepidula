@@ -4,12 +4,12 @@ library(tidyverse)
 library(vegan)
 
 # metadata
-expDesign = read.csv("../../expDesign.csv") %>%
+expDesign = read.csv("../../../expDesign.csv") %>%
   filter(Species == "Crepidula fornicata") %>%
   mutate(Site = factor(Site, levels = c("Robbinston", "Kettle Cove", "Beverly", "Newport", "Cape May")))
 
 # covariance matric
-co = as.matrix(read.table("../fornicata_results.covMat"))
+co = as.matrix(read.table("../fornicata_outlier.covMat"))
 
 #  PCoA and CAP (constranied analysis of proximities)  
 conds=data.frame(expDesign$Site)
@@ -43,13 +43,13 @@ ggplot(pca, aes(MDS1, MDS2)) +
   theme_classic(base_size = 20) +
   guides(fill = guide_legend(title = "Site"))
 
-ggsave(plot = last_plot(), "fornicata_pca.pdf")
+ggsave(plot = last_plot(), "fornicata_outlier_pca.pdf")
 
 
 
 ## IBS
 
-ma = as.matrix(read.table("../fornicata_results.ibsMat"))
+ma = as.matrix(read.table("../fornicata_outlier.ibsMat"))
 
 # partial PCoA, taking out the variation due to coverage
 pp1=capscale(ma~1)

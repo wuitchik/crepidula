@@ -41,3 +41,7 @@ for (i in 1:PCs){
 }
 
 fornicata_outliers = dflist
+
+
+
+write.table(fornicata_outliers, "f_outliers.txt", sep = "\t", row.names = F)

@@ -1,0 +1,75 @@
+,Sample,Species,Site,Lane,Quality
+1,PB11A,Crepidula plana,Beverly,2,0.372866769
+2,PB11B,Crepidula plana,Beverly,1,0.855589345
+3,PB11C,Crepidula plana,Beverly,1,0.814185891
+4,PB12A,Crepidula plana,Beverly,1,0.850188583
+5,PB13A,Crepidula plana,Beverly,1,0.847162089
+6,PB14A,Crepidula plana,Beverly,2,0.825697488
+7,PB14B,Crepidula plana,Beverly,1,0.813422762
+8,PB21A,Crepidula plana,Beverly,1,0.843305886
+9,PB22m,Crepidula plana,Beverly,1,0.824438734
+10,PB23A,Crepidula plana,Beverly,2,0.747002853
+11,PB24A,Crepidula plana,Beverly,1,0.68101179
+12,PB24B,Crepidula plana,Beverly,1,0.826111897
+13,PB31A,Crepidula plana,Beverly,2,0.848765827
+14,PB32A,Crepidula plana,Beverly,1,0.842100684
+15,PB33A,Crepidula plana,Beverly,1,0.81027295
+16,PB33B,Crepidula plana,Beverly,1,0.899867502
+17,PB33C,Crepidula plana,Beverly,1,0.446396933
+18,PB34A,Crepidula plana,Beverly,2,0.829111806
+19,PB43A,Crepidula plana,Beverly,2,0.39949472
+20,PC11A,Crepidula plana,Cape May,1,0.799177892
+21,PC12A,Crepidula plana,Cape May,1,0.663867831
+22,PC13A,Crepidula plana,Cape May,1,0.365559485
+23,PC13C,Crepidula plana,Cape May,2,0.330104188
+24,PC14A,Crepidula plana,Cape May,2,0.587757611
+25,PC21A,Crepidula plana,Cape May,1,0.878649201
+26,PC22A,Crepidula plana,Cape May,1,0.551979168
+27,PC22B,Crepidula plana,Cape May,1,0.823543477
+28,PC22C,Crepidula plana,Cape May,1,0.863297689
+29,PC23A,Crepidula plana,Cape May,1,0.491736428
+30,PC23B,Crepidula plana,Cape May,2,0.491843894
+31,PC23C,Crepidula plana,Cape May,1,0.401106633
+32,PC24A,Crepidula plana,Cape May,1,0.857765043
+33,PC24B,Crepidula plana,Cape May,2,0.82568767
+34,PC31A,Crepidula plana,Cape May,2,0.667632543
+35,PC41A,Crepidula plana,Cape May,2,0.938835366
+36,PC41B,Crepidula plana,Cape May,1,0.398106688
+38,PC43B,Crepidula plana,Cape May,2,0.451793502
+39,PC43C,Crepidula plana,Cape May,2,0.492619657
+40,PK10,Crepidula plana,Kettle Cove,2,0.610626998
+41,PK11,Crepidula plana,Kettle Cove,2,0.630977883
+42,PK12,Crepidula plana,Kettle Cove,2,0.686380764
+43,PK13,Crepidula plana,Kettle Cove,2,0.492485791
+44,PK14,Crepidula plana,Kettle Cove,1,0.744318991
+45,PK15,Crepidula plana,Kettle Cove,1,0.82162482
+46,PK17,Crepidula plana,Kettle Cove,1,0.770294488
+47,PK18,Crepidula plana,Kettle Cove,2,0.541902742
+48,PK2,Crepidula plana,Kettle Cove,2,0.599605173
+49,PK3,Crepidula plana,Kettle Cove,1,0.657915641
+50,PK4,Crepidula plana,Kettle Cove,1,0.694860658
+51,PK5,Crepidula plana,Kettle Cove,2,0.687159369
+52,PK6m,Crepidula plana,Kettle Cove,1,0.61653292
+53,PK7,Crepidula plana,Kettle Cove,2,0.705709307
+54,PK8,Crepidula plana,Kettle Cove,1,0.636537367
+55,PK9,Crepidula plana,Kettle Cove,1,0.664167514
+56,PN1,Crepidula plana,Newport,2,0.761384864
+57,PN10,Crepidula plana,Newport,2,0.523452135
+58,PN12,Crepidula plana,Newport,2,0.612534946
+59,PN13,Crepidula plana,Newport,1,0.654004985
+60,PN14,Crepidula plana,Newport,2,0.691956443
+61,PN15,Crepidula plana,Newport,1,0.56190804
+62,PN16,Crepidula plana,Newport,1,0.645782189
+63,PN18,Crepidula plana,Newport,1,0.826593389
+64,PN2,Crepidula plana,Newport,2,0.424261791
+65,PN20,Crepidula plana,Newport,1,0.713598605
+66,PN21,Crepidula plana,Newport,2,0.582230185
+67,PN23,Crepidula plana,Newport,1,0.561591769
+68,PN24,Crepidula plana,Newport,2,0.539129472
+69,PN25,Crepidula plana,Newport,1,0.875000243
+70,PN26,Crepidula plana,Newport,2,0.696649976
+71,PN28,Crepidula plana,Newport,1,0.676160198
+72,PN5,Crepidula plana,Newport,1,0.853021891
+73,PN6m,Crepidula plana,Newport,2,0.66299229
+74,PN8,Crepidula plana,Newport,2,0.695217031
+75,PN9,Crepidula plana,Newport,1,0.795370514
